@@ -30,16 +30,11 @@ def select_(id):
     return artist
 
 def select_all():
-    artist= []
-
-
-def select_all():
     artist = []
+    sql = "SELECT * FROM artist"
+    results = run_sql(sql)
 
-sql = "SELECT * FROM artist"
-results = run_sql(sql)
-
-for row in results:
-    artist = Artist(results['name'],results['id'] )
-    artist.append(artist)
+    for row in results:
+        artist = Artist(results['name'],results['id'])
+        artist.append(artist)
     return artist
